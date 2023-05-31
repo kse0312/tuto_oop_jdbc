@@ -1,8 +1,8 @@
-package org.example;
+package org.example.WorldDB;
 
 
-import org.example.Model.BaseDAO;
-import org.example.Model.Person;
+import org.example.WorldDB.Model.BaseDAO;
+import org.example.WorldDB.Model.Person;
 
 import java.sql.*;
 import java.util.ArrayList;

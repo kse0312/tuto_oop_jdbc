@@ -1,4 +1,4 @@
-package org.example.Model;
+package org.example.WorldDB.Model;
 
 public class Person {
     int id;

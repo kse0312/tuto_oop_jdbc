@@ -1,4 +1,4 @@
-package org.example.Model;
+package org.example.WorldDB.Model;
 
 import java.sql.SQLException;
 

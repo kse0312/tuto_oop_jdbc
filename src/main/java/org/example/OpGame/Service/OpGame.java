@@ -2,27 +2,37 @@ package org.example.OpGame.Service;
 
 public class OpGame {
     int remainingAnswers;
-    int val1, val2;
-    public void makeQuestion() {
-        remainingAnswers = 3;
-        val1 = 1;
-        val2 = 1;
+    String cheeringUpMsg = "한번 더 해보자";
+    IOperator op;
+
+    public OpGame(IOperator op) {
+        this.op = op;
     }
 
-    public boolean isAnswer(int answer) {
-        remainingAnswers--;
-        return val1 + val2 == answer;
+    public void makeQuestion() {
+        remainingAnswers = 3;
+        op.setA(1);
+        op.setB(1);
+    }
+
+    public void makeQuestion(int max) {
+        op.generateQuestion(max);
+    }
+
+    public String getQuestion() {
+        return op.getQuestionMsg();
     }
 
     public int getRemainingAnswers() {
         return remainingAnswers;
     }
 
-    public String getQuestion() {
-        return String.format("%d + %d = ", val1, val2);
+    public boolean isAnswer(int answer) {
+        remainingAnswers--;
+        return op.isEqueals(answer);
     }
 
     public String getCheeringUpMsg() {
-        return "한 번 더 해보자";
+        return cheeringUpMsg;
     }
 }
